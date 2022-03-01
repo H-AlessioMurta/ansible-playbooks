@@ -1,0 +1,30 @@
+---
+- hosts: targets
+  become: true
+  tasks:
+    - name: Creo cartella
+      file:
+        path: "/home/test"
+        state: directory
+    - name: Creo file vuoto
+      file:
+        path: "/home/test/vuoto.txt"
+        state: touch
+    - name: Creo file ciaomondo
+      copy:
+        dest: "/home/test/ciaomondo.txt"
+        content: "Ciao Mondo"
+    - name: Creo cartella che distruggero
+      file:
+        path: "/home/duropoco"
+        state: directory
+    - name: Cancello dir
+      file:
+        path: "/home/duropoco"
+        state: absent
+    - name: Check Date with Shell command
+      shell:
+         "date"
+      register: datecmd
+      tags: datecmd
+    - debug: msg="{{datecmd.stdout}}"
