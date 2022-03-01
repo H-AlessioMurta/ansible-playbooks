@@ -1,0 +1,12 @@
+---
+- hosts: targets
+  become: true
+  tasks:
+    - name: Creo utente rundeck
+      shell: |
+            rm -rf /home/rundeck/.ssh
+            mkdir -p /home/rundeck/.ssh
+            groupadd -f -g 1002 rundeck
+            useradd -d /home/rundeck -s /bin/bash -c "Rundeck user" -u 1002 -g 1002 rundeck
+            chown -R rundeck:rundeck /home/rundeck
+            echo "rundeck ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/rundeck
