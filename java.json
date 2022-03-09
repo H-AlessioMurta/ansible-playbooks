@@ -1,6 +1,9 @@
-[
-    {"name":"java", "value":"6"},
-    {"name":"java", "value":"7"},
-    {"name":"java", "value":"8"},
-    {"name":"java", "value":"11"}
-]
+{
+    "value1":"1036",
+    "value2":"1213",
+    "value3":"12211",
+    "value4":"12212",
+    "value5":"12213",
+    "value6":"12214",
+    "value7":"1411"
+}
