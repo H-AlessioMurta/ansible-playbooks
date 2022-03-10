@@ -26,7 +26,9 @@ Restituisce in output:
 
 ## Manutenzione del job read_defaults su Rundeck
 
-In caso venga rilasciata una nuova configurazione nella sezione group_vars:
+Il principale scopo di questo script e fornire la logica d'esecuzione al job rundeck omonimo.
+
+Sono necessari degli accorgimenti per mantenere aggiornate le funzionalità del codice in caso venga rilasciata una nuova configurazione nella sezione group_vars:
 
 1)In caso di nuovo service_type, va modifica l'opzione omonima nella scheda.
 
