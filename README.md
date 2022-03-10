@@ -1,5 +1,5 @@
 # read_defaults.py
-Lo scopo dello script è restituire in formato **json** una delle configurazioni *.yaml* al percorso:
+Lo scopo dello script è restituire in formato **json** una delle configurazioni **.yaml** al percorso:
 
 **/spimi/progetti/ansible/provision/group_vars/nomefile.yaml**
 ## Parametri
@@ -26,14 +26,17 @@ Restituisce in output:
 
 ## Manutenzione del job read_defaults su Rundeck
 
-In caso venga rilasciato una nuova configurazione nella sezione group_vars:
+In caso venga rilasciata una nuova configurazione nella sezione group_vars:
 
 1)In caso di nuovo service_type, va modifica l'opzione omonima nella scheda.
+
  edit job > workflow > edit sulla option > allowed values 
+
  ![campo](./read_defaults_immaginereadme1.PNG)
  
-2)In caso di nuova versione, va aggiunta nel file .json del servizio. Esempio con un eventuale aggiunta di Jboss7.4
-Per rendere più parlante il menu su rundeck, lasciare chiave e valore con la stessa stringa.
+2)In caso di nuova versione di un service_type esiststente, va aggiunta nel file .json del servizio. 
+ Esempio con un eventuale aggiunta di Jboss 7.4:
+
  ![campo](./read_defaults_immaginereadme2.PNG)
-
-
+ 
+ Per rendere più parlante il menu su rundeck, lasciare chiave e valore con la stessa stringa.
