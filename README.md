@@ -42,3 +42,13 @@ Sono necessari degli accorgimenti per mantenere aggiornate le funzionalità del 
  ![campo](./read_defaults_immaginereadme2.PNG)
  
  Per rendere più parlante il menu su rundeck, lasciare chiave e valore con la stessa stringa.
+ 
+ ## Lancio del job rundeck via curl
+    curl -D - \
+    -X "POST" -H "Accept: application/json" \
+    -H "Content-Type: application/json" \
+    -H "X-Rundeck-Auth-Token: $AUTH_TOKEN" \
+    -d "{\"argString\":\" -service_type java -version 11 -is_admin True -hostname salclp333,salclp444 -acronimo TLLA0\"}" \
+    http://localhost:4440/api/16/job/$JOB_UID/run
+ 
+ 
